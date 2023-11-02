@@ -5,9 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konga | Home Page</title>
-    <link rel="stylesheet" href="{% static 'store/main.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'store/main.css' %}"> -->
 </head>
-<body>
-    <h1>Welcome to the home page</h1>
+<body style="background-color:rgba(213, 219, 216, 0.61); height: 100vh; color: white; width: 100vw; margin:0; text-align: center;">
+    <h1 style="text-transform: capitalize; font-size: 40px; color: black; text-align:center;">Welcome to the home page</h1>
+    <div style="border: 8; border-color: beige;">
+        {% for product in all_products %}
+        <div style="color: white; text-transform: none;">
+            <span style="display: flex; justify-content: space-around;">
+                <h2 style="font-size: 24px; color: white;"><a href="{% url 'detail' product.id %}">{{ product.name }}:  ₦{{ product.price }}</a></h2>
+            </span>
+            <div style="display: flex; justify-content: center">
+
+                <a href="{% url 'detail' product.id %}"><img style="border-radius: 100px;" src="{{ product.image.url }}" alt={{product.name}} width="200px" height="200px"></a>
+            </div>
+            <button style="padding-left: 12px; padding-right: 12px; padding-top: 6px; padding-bottom: 6px; margin-top: 8px; text-align: center; font-size: 20px; border-radius: 50px;">Buy Now</button>
+        </div>
+            
+        <br>
+        
+        {% endfor %}
+    </div>
 </body>
 </html>

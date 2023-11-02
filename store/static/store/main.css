@@ -1,4 +1,10 @@
-h1 {
-    color: red;
-    background-color: cyan;
+h1:hover{
+    font-size: larger;
+    rotate: calc(90deg);
+    cursor: pointer;
+    
+}
+img:hover{
+    rotate: 90deg;
+    cursor: pointer;
 }
