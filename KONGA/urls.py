@@ -23,7 +23,7 @@ from store.views import homepage, detailpage, createproductpage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homepage),
-    path("<int:input_id>/", detailpage, name="detail"),
+    path("<int:input_id>/", detailpage.as_view(), name="detail"),
     path("create/", createproductpage, name="create")
 ]
 
